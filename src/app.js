@@ -22,6 +22,13 @@ function App() {
     );
   });
 
+  const toggleRead = (target) => {
+    const updatedEmails = listOfEmails.map((email) =>
+      email === target ? { ...email, read: !email.read } : email
+    );
+    setEmails(updatedEmails);
+  };
+
   return (
     <div className="app">
       <Header />
