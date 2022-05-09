@@ -29,6 +29,13 @@ function App() {
     setEmails(updatedEmails);
   };
 
+  const toggleStar = (target) => {
+    const updatedEmails = listOfEmails.map((email) =>
+      email === target ? { ...email, starred: !email.starred } : email
+    );
+    setEmails(updatedEmails);
+  };
+
   return (
     <div className="app">
       <Header />
